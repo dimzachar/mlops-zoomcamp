@@ -5,3 +5,10 @@
 - **Operate**: This stage involves model deployment, management, and monitoring.
 
 MLOps is helpful in all these stages, providing best practices for bringing Machine Learning to production.
+
+
+![MLOps and Environment Setup Diagram](https://showme.redstarplugin.com/s/dXu3RYxC)
+
+- **MLOps**: This is a set of principles and practices for efficient management of the end-to-end Machine Learning lifecycle from experiments to productionization. It includes version management of both data and model artifacts, operationalizing the development and release cycle of ML models in a CICD ecosystem, and monitoring the performance of models in production to maintain effectiveness.
+- **Environment Setup**: This involves spinning up an EC2 instance, connecting to the Ubuntu EC2 server, and configuring the Ubuntu server. The configuration includes installing Anaconda, Docker, and Docker Compose. Finally, the VS Code setup is done for development.
+
