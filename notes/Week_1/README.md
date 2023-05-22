@@ -1,5 +1,7 @@
 # MLOps Zoomcamp Notes Week 1
 
+in progress...
+
 ## Table of Contents
 
 1. [Introduction to ML Deployment](chapter-1.md)

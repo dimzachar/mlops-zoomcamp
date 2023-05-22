@@ -7,4 +7,4 @@ This chapter discusses the creation and organization of notebooks, tracking mode
     <img src="https://showme.redstarplugin.com/s/e3STx8Yn" />
 </div>
 
-[Previous Chapter](chapter-4.md)
+[Previous](chapter-4.md)
