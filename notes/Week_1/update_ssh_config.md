@@ -2,6 +2,18 @@
 
 This script automatically updates the IP address of your EC2 instance in your SSH config file. This can be useful if your instance's IP address changes frequently (for example, when stopping and starting an EC2 instance).
 
+<div align="center">
+    <img src="https://showme.redstarplugin.com/s/x0VEGalE" />
+</div>
+
+
+* The user runs the update_ssh_config.sh script.
+* The script fetches the new IP address of the EC2 instance using the AWS CLI.
+* The AWS CLI returns the new IP address to the script.
+* The script updates the SSH config file with the new IP address.
+
+This process ensures that your SSH config file always has the current IP of your EC2 instance.
+
 ## Prerequisites
 
 Before you begin, ensure you have met the following requirements:
