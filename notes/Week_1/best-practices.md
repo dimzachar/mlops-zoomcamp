@@ -1,6 +1,13 @@
 # Βest practices
 
-This chapter discusses the creation and organization of notebooks, tracking model performance and history with an experiment tracker, ML pipeline for model experimentation and reproducibility, parameterizing pipelines, model deployment and monitoring, automating the machine learning pipeline and best practices, and discussing automated ML maturity levels, training, and deployment. The key takeaway from this chapter is understanding machine learning pipeline best practices and automation.
+- **Creation and organization of notebooks**
+- **Tracking model performance and history with an experiment tracker**
+- **Machine Learning (ML) pipeline for model experimentation and reproducibility**
+- **Parameterizing pipelines**
+- **Model deployment and monitoring**
+- **Automating the machine learning pipeline and best practices**
+- **Discussing automated ML maturity levels, training, and deployment**
+- **Key takeaway: Understanding machine learning pipeline best practices and automation**
 
 
 [Previous](training.md) | [Next](maturity.md)
