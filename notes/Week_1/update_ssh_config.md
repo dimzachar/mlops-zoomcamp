@@ -66,3 +66,6 @@ To use the script, follow these steps:
     ```
 
 This will update your SSH config file with the current IP of your EC2 instance.
+
+
+[Previous](env-setup.md) | [Next](training.md)
