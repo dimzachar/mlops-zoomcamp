@@ -7,4 +7,4 @@ This chapter covers the process of building an ML model for predicting ride dura
     <img src="https://showme.redstarplugin.com/s/LnQTZzp3" />
 </div>
 
-[Previous Chapter](chapter-3.md) | [Next Chapter](chapter-5.md)
+[Previous](chapter-3.md) | [Next](chapter-5.md)

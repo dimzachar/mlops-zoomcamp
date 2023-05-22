@@ -7,4 +7,4 @@ This chapter provides a tutorial on how to read parquet files using pandas, iter
     <img src="https://showme.redstarplugin.com/s/Yjk51byB" />
 </div>
 
-[Previous Chapter](chapter-2.md) | [Next Chapter](chapter-4.md)
+[Previous](chapter-2.md) | [Next](chapter-4.md)
