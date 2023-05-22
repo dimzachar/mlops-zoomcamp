@@ -1,11 +1,3 @@
-# Chapter 1: Introduction to ML Deployment
-
-This chapter introduces the concept of machine learning deployment and the Envelopes platform that automates monitoring and reproducibility, and streamlines the deployment process. The key takeaway from this chapter is understanding the importance of automating model monitoring and reproducibility tasks in machine learning deployment and how the Envelopes platform can help in this process.
-
-<div align="center">
-    <img src="https://showme.redstarplugin.com/s/9OJRECxz" />
-</div>
-
 # Chapter 1: Introduction to Machine Learning in Production
 
 ## Course Overview
@@ -35,17 +27,8 @@ MLOps is helpful in all these stages, providing best practices for bringing Mach
 MLOps helps ensure model performance and automates processes for team collaboration in machine learning. It's a powerful tool that can help teams streamline their machine learning workflows and ensure that their models are performing at their best. 
 
 <div align="center">
-    <img src="https://showme.redstarplugin.com/s/rCq6NBcQ" />
+    <img src="https://kroki.io/mermaid/svg/eNpLL0osyFAIceJSUHCK9vXxLyiOBTEVdHXtFNyinfNzchKT8osSSzLz8xAS7tGOpSX5uWiiHtG--SmpOQoBqUVp-UW5iXnJqSDJnMy87OCSypxUBQOF4pKi_OxUK2Wj1OQUc0MdCFe3PDOlJMPKqKDCGkW5IWnKjQgrBwB1T0x3" />
 </div>
-
-
-[Next Chapter](Chapter2.md)
-
-
-
-
-
-
 
 
 [Next](chapter-2.md)
