@@ -1,5 +1,4 @@
-
-## Chapter 2: Environment Setup for AWS Instance Creation
+# Environment Setup for AWS Instance Creation
 
 This chapter covers the process of setting up an environment for AWS instance creation, including installing Anaconda and Docker on Linux, cloning a repo from GitHub, and using Visual Studio Code for remote access. The key takeaway from this chapter is learning how to prepare the environment for AWS instance creation and efficiently work with Anaconda, Docker, and Visual Studio Code for remote access.
 
@@ -9,4 +8,4 @@ This chapter covers the process of setting up an environment for AWS instance cr
 </div>
 
 
-[Previous](chapter-1.md) | [Next](chapter-3.md)
+[Previous](intro.md) | [Next](update_ssh_config.md)

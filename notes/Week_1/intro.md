@@ -1,4 +1,4 @@
-# Chapter 1: Introduction to Machine Learning in Production
+# Introduction to Machine Learning in Production
 
 ## Course Overview
 
@@ -31,4 +31,4 @@ MLOps helps ensure model performance and automates processes for team collaborat
 </div>
 
 
-[Next](chapter-2.md)
+[Next](env-setup.md)
