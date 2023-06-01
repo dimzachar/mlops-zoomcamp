@@ -17,7 +17,9 @@ mlflow.set_experiment(EXPERIMENT_NAME)
 mlflow.sklearn.autolog()
 
 
-def load_pickle(filename):
+def load_pickle(filename: str):
+    if not os.path.exists(filename):
+        raise FileNotFoundError(f"{filename} not found.")
     with open(filename, "rb") as f_in:
         return pickle.load(f_in)
 
@@ -70,10 +72,18 @@ def run_register_model(data_path: str, top_n: int):
 
     # Select the model with the lowest test RMSE
     experiment = client.get_experiment_by_name(EXPERIMENT_NAME)
-    # best_run = client.search_runs( ...  )[0]
+    best_run = client.search_runs(
+        experiment_ids=experiment.experiment_id,
+        run_view_type=ViewType.ACTIVE_ONLY,
+        max_results=1,
+        order_by=["metrics.test_rmse ASC"]
+    )[0]
 
     # Register the best model
-    # mlflow.register_model( ... )
+    mlflow.register_model(
+        model_uri = f"runs:/{best_run.info.run_id}/model",
+        name="nyc-taxi-duration"
+    )
 
 
 if __name__ == '__main__':
