@@ -9,6 +9,8 @@ from sklearn.metrics import mean_squared_error
 
 
 def load_pickle(filename: str):
+    if not os.path.exists(filename):
+        raise FileNotFoundError(f"{filename} not found.")
     with open(filename, "rb") as f_in:
         return pickle.load(f_in)
 
@@ -51,12 +53,21 @@ def run_train(
 
     mse = mean_squared_error(y_val, y_pred, squared=False)
     # TODO: Log `mse` to Weights & Biases under the key `"MSE"`
-
+    wandb.log({"MSE": mse})
+    
+    
     with open("regressor.pkl", "wb") as f:
         pickle.dump(rf, f)
 
     # TODO: Log `regressor.pkl` as an artifact of type `model`
-
+    model_artifact = wandb.Artifact(
+        "rf_model",
+        type="model",
+        description="Random forest regressor model",
+        metadata={"max_depth": max_depth, "random_state": random_state},
+    )
+    model_artifact.add_file("regressor.pkl")
+    wandb.log_artifact(model_artifact)
 
 if __name__ == "__main__":
     run_train()

@@ -9,6 +9,11 @@ from sklearn.feature_extraction import DictVectorizer
 
 
 def dump_pickle(obj, filename: str):
+    dirname = os.path.dirname(filename)
+    if dirname and not os.path.exists(dirname):
+        raise FileNotFoundError(f"Directory {dirname} of the filename does not exist.")
+    if os.path.exists(filename) and not os.access(filename, os.W_OK):
+        raise PermissionError(f"{filename} is not writable.")
     with open(filename, "wb") as f_out:
         return pickle.dump(obj, f_out)
 
