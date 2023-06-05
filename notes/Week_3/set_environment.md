@@ -1,0 +1,3 @@
+Chapter 2: Understanding Prefect and its Components
+
+This chapter thoroughly introduces Prefect, its components, and relevant terminology. It covers the process of configuring a local database, elucidating key steps such as setting up tables, establishing connections, and handling data. It explores the setup of the Prefect environment and running scripts on the Prefect server. The chapter also delves into the application of retry logic in handling exceptions and failures during workflow execution.
