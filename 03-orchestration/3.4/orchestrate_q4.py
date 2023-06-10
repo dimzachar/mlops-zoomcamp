@@ -182,7 +182,7 @@ def train_best_model(
     return None
 
 @flow
-def main_flow(
+def main_flow_q4(
     train_path: str = "~/mlops-zoomcamp/data/green_tripdata_2023-02.parquet",
     val_path: str = "~/mlops-zoomcamp/data/green_tripdata_2023-03.parquet",
 ) -> None:
@@ -215,4 +215,4 @@ if __name__ == "__main__":
     """
     If the script is run (as opposed to being imported), execute the main pipeline.
     """
-    main_flow()
+    main_flow_q4()
