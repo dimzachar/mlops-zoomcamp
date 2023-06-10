@@ -186,16 +186,7 @@ def train_best_model(
         )
         
         
-        # Load the email server credentials
-        email_credentials_block = EmailServerCredentials.load("emailnotification")
-
-        # Send an email
-        email_send_message(
-            email_server_credentials=email_credentials_block,
-            subject="Flow Notification",
-            msg=markdown__rmse_report,
-            email_to=my_email,
-        )
+    
 
     return None
 
@@ -228,7 +219,16 @@ def main_flow_q5(
     # Train the model
     train_best_model(X_train, X_val, y_train, y_val, dv)
     
+    # Load the email server credentials
+    email_credentials_block = EmailServerCredentials.load("emailnotification")
 
+    # Send an email
+    email_send_message(
+        email_server_credentials=email_credentials_block,
+        subject="Flow Notification",
+        msg="Flow run completed",
+        email_to=my_email,
+    )
 
 if __name__ == "__main__":
     """
