@@ -124,7 +124,7 @@ def train_best_model(
             "learning_rate": 0.09585355369315604,
             "max_depth": 30,
             "min_child_weight": 1.060597050922164,
-            "objective": "reg:linear",
+            "objective": "reg:squarederror",
             "reg_alpha": 0.018060244040060163,
             "reg_lambda": 0.011658731377413597,
             "seed": 42,
