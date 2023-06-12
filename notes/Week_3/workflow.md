@@ -20,8 +20,8 @@ def read_data(filename: str) -> pd.DataFrame:
 
 @flow
 def main_flow(
-    train_path: str = "~/mlops-zoomcamp/data/green_tripdata_2023-01.parquet",
-    val_path: str = "~/mlops-zoomcamp/data/green_tripdata_2023-02.parquet",
+    train_path: str = "./data/green_tripdata_2023-01.parquet",
+    val_path: str = "./data/green_tripdata_2023-02.parquet",
 ) -> None:
     # Load the data
     df_train = read_data(train_path)
