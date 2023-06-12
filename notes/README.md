@@ -4,7 +4,6 @@
 
 | Week | Note Name | Link |
 | --- | --- | --- |
-| Week 1 | README | [Link](https://github.com/dimzachar/mlops-zoomcamp/blob/master/notes/Week_1/README.md) |
 | Week 1 | Introduction | [Link](https://github.com/dimzachar/mlops-zoomcamp/blob/master/notes/Week_1/intro.md) |
 | Week 1 | Environment Setup | [Link](https://github.com/dimzachar/mlops-zoomcamp/blob/master/notes/Week_1/env-setup.md) |
 | Week 1 | Update SSH Config | [Link](https://github.com/dimzachar/mlops-zoomcamp/blob/master/notes/Week_1/update_ssh_config.md) |
