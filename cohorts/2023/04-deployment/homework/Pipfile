@@ -1,0 +1,23 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+scikit-learn = "==1.2.2"
+flask = "*"
+pyarrow = "*"
+jupyter = "*"
+numpy = "*"
+pandas = "*"
+tornado = "==6.1"
+s3fs = "*"
+boto3 = "*"
+prefect = "*"
+mlflow = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.10"
+python_full_version = "3.10.9"
