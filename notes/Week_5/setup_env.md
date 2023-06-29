@@ -27,11 +27,15 @@ prefect
 tqdm
 requests
 joblib
-psycopg2-binary
+pyarrow
+psycopg
+psycopg_binary
+evidently 
 pandas
 numpy
 scikit-learn
 jupyter
+matplotlib
 ```
 
 ## Step 4: Install Python Packages
