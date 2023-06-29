@@ -4,17 +4,19 @@
 
 First, we need to create a working directory for our project. Open your terminal and run the following command:
 
-```bash
+\```bash
 mkdir taxi_monitoring
-
+\```
 
 ## Step 2: Set Up a Conda Environment
 
 Next, we'll create a Conda virtual environment with Python 3.11. In your terminal, run:
 
-```bash
+\```bash
 conda create -n py11 python=3.11
 conda activate py11
+\```
+
 
 ## Step 3: Create a Requirements.txt File
 
