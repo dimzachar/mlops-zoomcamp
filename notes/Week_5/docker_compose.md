@@ -6,9 +6,9 @@ A Docker Compose file is used to define and manage a multi-container Docker appl
 
 In your project directory, create a file named `docker-compose.yml`
 
-\```bash
+```bash
 touch docker-compose.yml
-\```
+```
 
 ## Step 6: Configure Docker Compose
 
@@ -17,7 +17,7 @@ We'll add a PostgreSQL database, an Adminer for managing the database content, a
 
 Here's an example of `docker-compose.yml`:
 
-\```yaml
+```
 # Specifies the Docker Compose file version
 version: '3.7'
 
@@ -79,8 +79,7 @@ services:
       - back-tier
       - front-tier
     restart: always
-
-\```
+```
 
 The Docker Compose file does the following:
 
@@ -101,14 +100,14 @@ This Docker Compose file is typically used in a scenario where you want to set u
 We'll create a Grafana data source configuration file. It's used to define the data sources that Grafana should connect to. A data source in Grafana represents a back-end database, such as PostgreSQL, MySQL, InfluxDB, or a myriad of other data storage systems.
 In your project directory, create a new directory named `config` and a file within it named `grafana_datasources.yaml`:
 
-\```bash
+```
 mkdir config
 touch config/grafana_datasources.yaml
-\```
+```
 
 and specify it as:
 
-```yaml
+```
 # Specifies the version used in this configuration file
 apiVersion: 1
 
@@ -137,7 +136,7 @@ datasources:
     jsonData:
       # Disables SSL mode for the database connection
       sslmode: 'disable'
-\```
+```
 
 In this file, a single data source is defined:
 
@@ -152,9 +151,9 @@ This setup allows Grafana to pull data from the PostgreSQL database, which it ca
 
 Finally, we'll build and run our Docker Compose configuration. In your terminal, navigate to the directory containing `docker-compose.yml` and run:
 
-\```bash
+```bash
 docker-compose up --build
-\```
+```
 
 You should see that all your containers are successfully created. You can verify this by accessing Grafana and Adminer through your browser at `localhost:3000` and `localhost:8080`, respectively.
 
