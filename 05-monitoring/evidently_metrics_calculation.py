@@ -21,8 +21,8 @@ SEND_TIMEOUT = 10
 rand = random.Random()
 
 create_table_statement = """
-drop table if exists dummy_metrics;
-create table dummy_metrics(
+drop table if exists table_metrics;
+create table table_metrics(
 	timestamp timestamp,
 	prediction_drift float,
 	num_drifted_columns integer,
@@ -79,7 +79,7 @@ def calculate_metrics_postgresql(curr, i):
 	share_missing_values = result['metrics'][2]['result']['current']['share_of_missing_values']
 
 	curr.execute(
-		"insert into dummy_metrics(timestamp, prediction_drift, num_drifted_columns, share_missing_values) values (%s, %s, %s, %s)",
+		"insert into table_metrics(timestamp, prediction_drift, num_drifted_columns, share_missing_values) values (%s, %s, %s, %s)",
 		(begin + datetime.timedelta(i), prediction_drift, num_drifted_columns, share_missing_values)
 	)
 
