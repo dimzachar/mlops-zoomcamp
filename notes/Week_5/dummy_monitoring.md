@@ -30,7 +30,7 @@ import psycopg
 
 Next, we define a constant for the send timeout and an SQL statement to create the `dummy_metrics` table.
 
-```
+```python
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s]: %(message)s")
 
 SEND_TIMEOUT = 10

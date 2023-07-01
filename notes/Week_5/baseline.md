@@ -6,7 +6,7 @@ Before we can start monitoring our machine learning model, we need to establish 
 
 First, we need to import all the necessary libraries for our project. This includes libraries for handling requests, datetime operations, data manipulation (Pandas), machine learning (Scikit-learn), model persistence (Joblib), progress bars (tqdm), and data drift and model performance monitoring (Evidently).
 
-```
+```python
 # Import necessary libraries
 import requests
 import datetime
@@ -153,7 +153,7 @@ def generate_report(train_data, val_data, num_features, cat_features):
 
 We'll download the Green Taxi Trip Data from January and February 2022 using the `download_files()` function. This data is publicly available and can be used for our machine learning project.
 
-```
+```python
 files = [('green_tripdata_2022-02.parquet', './data'), ('green_tripdata_2022-01.parquet', './data')]
 download_files(files)
 ```
@@ -161,7 +161,7 @@ download_files(files)
 ## Step 4: Load and Preprocess Data
 
 After downloading the data, we'll load it into a pandas DataFrame and preprocess it
-```
+```python
 jan_data = pd.read_parquet('data/green_tripdata_2022-01.parquet')
 jan_data = preprocess_data(jan_data)
 ```
@@ -169,7 +169,7 @@ jan_data = preprocess_data(jan_data)
 ## Step 5: Define Features and Target
 
 We'll define the features we want to use for our model and the target variable. The features are the variables that our model will use to make predictions, while the target is the variable that we want to predict. In this case, we're trying to predict the duration of a taxi trip (in minutes) based on the passenger count, trip distance, fare amount, total amount, and pickup and dropoff locations.
-```
+```python
 target = "duration_min"
 num_features = ["passenger_count", "trip_distance", "fare_amount", "total_amount"]
 cat_features = ["PULocationID", "DOLocationID"]
@@ -179,21 +179,21 @@ cat_features = ["PULocationID", "DOLocationID"]
 
 We'll train a linear regression model on the training data and evaluate it on the validation data using the `train_and_evaluate()` function. This step involves fitting the model to the training data and then using it to make predictions on the validation data. We then calculate the mean absolute error of the predictions to evaluate the model's performance.
 
-```
+```python
 model, train_data, val_data = train_and_evaluate(jan_data, num_features, cat_features, target)
 ```
 
 ## Step 7: Save Model and Reference Data
 
 Finally, we'll save the trained model and reference data for future use using the `save_model_and_data()` function. This step is important for model deployment and monitoring, as we'll need to load the model and reference data in the future.
-```
+```python
 save_model_and_data(model, val_data)
 ```
 
 ## Step 8: Generate Evidently Report
 
 We'll generate an Evidently report to monitor the performance of our model using the `generate_report()` function. This report provides insights into the model's performance and can help us identify any issues or areas for improvement.
-```
+```python
 report = generate_report(train_data, val_data, num_features, cat_features)
 ```
 
@@ -204,7 +204,7 @@ report = generate_report(train_data, val_data, num_features, cat_features)
 
 We'll extract key metrics such as the drift score, the number of drifted columns, and the share of missing values. from the report and print them. These metrics can give us a quantitative measure of the model's performance and any data drift. We'll then display the Evidently report, which provides a visual representation of these metrics.
 
-```
+```python
 result = report.as_dict()
 print("Drift score of the prediction column: ", result['metrics'][0]['result']['drift_score'])
 print("Number of drifted columns: ", result['metrics'][1]['result']['number_of_drifted_columns'])
