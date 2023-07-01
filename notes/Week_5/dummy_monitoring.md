@@ -53,7 +53,7 @@ Next, we define two main functions:
 
 - `prep_db()` : This function prepares the database by checking if the test database exists. If it doesn't, it creates the database and then creates a table for dummy metrics.
 
-```
+```python
 def prep_db():
     with psycopg.connect("host=localhost port=5432 user=postgres password=example", autocommit=True) as conn:
         res = conn.execute("SELECT 1 FROM pg_database WHERE datname='test'")
@@ -65,7 +65,7 @@ def prep_db():
 
 - `calculate_dummy_metrics_postgresql()` : This function calculates dummy metrics and loads them into the table. It generates random values for three variables and inserts them into the table along with the current timestamp.
 
-```
+```python
 def calculate_dummy_metrics_postgresql(curr):
     value1 = rand.randint(0, 1000)
     value2 = str(uuid.uuid4())
@@ -81,7 +81,7 @@ def calculate_dummy_metrics_postgresql(curr):
 
 In the main function, we prepare the database and then run a loop to calculate and insert dummy metrics into the table. We also calculate the time delay to simulate real production usage.
 
-```
+```python
 def main():
 	prep_db()
 	last_send = datetime.datetime.now() - datetime.timedelta(seconds=10)
@@ -118,10 +118,10 @@ Go to the browser and take a look at our database. We have a table `dummy_metric
 
 ## Step 7: Access Data from Grafana
 
-Now, let's go to Grafana and see whether we are able to access those data from Grafana. If we configured our Grafana and PostgreSQL correctly, we should be able to create a new dashboard. Here, we can see the example of a panel which is auto-generated, but we need to choose our data source which is PostgreSQL. We can select value for example, let's select value one and we can see the preview of our plot. We can change the last six hours to last five minutes so we can observe more of our data. Maybe add some description or change the panel name. Let's just create that, it's our dummy metric. Here, we can see our panel. It looks pretty nicely in Grafana. We can customize our own dashboard. We can add more panels here. For example, let's now select value 3 and call it Dummy Value 3. Maybe we want to change the color here. Violet for example. And here is our practical straightforward dashboard.
-
-So basically now we are sure that we correctly created all the configuration files so we can actually access our database, load data here, and build some dashboard from Grafana.
+Now, let's go to Grafana and see whether we are able to access those data from Grafana. If we configured our Grafana and PostgreSQL correctly, we should be able to create a new dashboard. Here, we can see the example of a panel which is auto-generated, but we need to choose our data source which is PostgreSQL. We can select value for example, let's select value one and we can see the preview of our plot. We can change the last six hours to last five minutes so we can observe more of our data. Maybe add some description or change the panel name. Let's just create that, it's our dummy metric. Here, we can see our panel. It looks pretty nicely in Grafana. We can customize our own dashboard. We can add more panels here. For example, let's now select value 3 and call it Dummy Value 3. Maybe we want to change the color here. And here is our practical straightforward dashboard.
 
 ![dummy_dashboard](https://github.com/dimzachar/mlops-zoomcamp/blob/master/notes/Week_5/Images/dummy_dashboard.png)
+
+So basically now we are sure that we correctly created all the configuration files so we can actually access our database, load data here, and build some dashboard from Grafana.
 
 [Previous](baseline.md) | [Next](data_quality.md)

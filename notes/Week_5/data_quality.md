@@ -1,4 +1,4 @@
-# Data Quality Monitoring
+# Data Quality Monitoring - NYC taxi trip
 
 In this tutorial, we delve into a crucial aspect of Machine Learning Operations (MLOps) - monitoring the performance of deployed machine learning models over time. The primary objective is to identify and log any changes in the model's performance, a process known as "drift detection". Drift can occur when the statistical properties of the target variable, which the model aims to predict, alter unexpectedly over time, potentially leading to a decline in the model's performance.
 

@@ -31,7 +31,7 @@ from sklearn.metrics import mean_absolute_error, mean_absolute_percentage_error
 
 ## Step 2: Load Data and Model
 
-Next, we load the data that we want to analyze and the model we want to monitor. In this case, we are interested in the data from February 2nd, which showed a high data drift value for our prediction function. We also define the target variable and the features that our model uses.
+Next, we load the data that we want to analyze and the model we want to monitor. In this case, we are interested in the data from February 2nd, which showed a high data drift value for our prediction function (hypothetically we set a threshold and the prediction drift goes above this threshold). We also define the target variable and the features that our model uses.
 
 ![debugging](https://github.com/dimzachar/mlops-zoomcamp/blob/master/notes/Week_5/Images/debugging.png)
 

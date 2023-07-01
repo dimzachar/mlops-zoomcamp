@@ -190,7 +190,7 @@ Finally, we'll save the trained model and reference data for future use using th
 save_model_and_data(model, val_data)
 ```
 
-Step 8: Generate Evidently Report
+## Step 8: Generate Evidently Report
 
 We'll generate an Evidently report to monitor the performance of our model using the `generate_report()` function. This report provides insights into the model's performance and can help us identify any issues or areas for improvement.
 ```
