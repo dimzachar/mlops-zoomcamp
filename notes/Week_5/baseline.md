@@ -24,7 +24,7 @@ from tqdm import tqdm
 # Import sklearn for machine learning
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_absolute_error
-
+```
 
 ## Step 2: Define Functions
 

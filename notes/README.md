@@ -18,3 +18,14 @@
 | Week 3 | S3 Data | [Link](https://github.com/dimzachar/mlops-zoomcamp/blob/master/notes/Week_3/s3_data.md) |
 | Week 3 | Prefect Cloud | [Link](https://github.com/dimzachar/mlops-zoomcamp/blob/master/notes/Week_3/prefect_cloud.md) |
 | Week 3 | Videos | [Link](https://github.com/dimzachar/mlops-zoomcamp/tree/master/notes/Week_3/videos) |
+| Week 5 | Introduction | [Introduction](https://github.com/dimzachar/mlops-zoomcamp/blob/master/notes/Week_5/intro.md) |
+| Week 5 | Batch Monitoring | [Batch](https://github.com/dimzachar/mlops-zoomcamp/blob/master/notes/Week_5/batch.md) |
+| Week 5 | Building a Monitoring Scheme | [Scheme](https://github.com/dimzachar/mlops-zoomcamp/blob/master/notes/Week_5/scheme.md) |
+| Week 5 | Setup Environment | [Setup Environment](https://github.com/dimzachar/mlops-zoomcamp/blob/master/notes/Week_5/setup_env.md) |
+| Week 5 | Docker Compose | [Docker Compose](https://github.com/dimzachar/mlops-zoomcamp/blob/master/notes/Week_5/docker_compose.md) |
+| Week 5 | Baseline | [Baseline](https://github.com/dimzachar/mlops-zoomcamp/blob/master/notes/Week_5/baseline.md) |
+| Week 5 | Dummy Monitoring | [Dummy Monitoring](https://github.com/dimzachar/mlops-zoomcamp/blob/master/notes/Week_5/dummy_monitoring.md) |
+| Week 5 | Data Quality | [Data Quality](https://github.com/dimzachar/mlops-zoomcamp/blob/master/notes/Week_5/data_quality.md) |
+| Week 5 | Save Dashboard | [Save Dashboard](https://github.com/dimzachar/mlops-zoomcamp/blob/master/notes/Week_5/save_dashboard.md) |
+| Week 5 | Debugging with test suites and reports | [Debugging](https://github.com/dimzachar/mlops-zoomcamp/blob/master/notes/Week_5/debugging.md) |
+

@@ -62,9 +62,13 @@ We then add the model's predictions to the `problematic_data` DataFrame. This is
 
 The `TestSuite` object is created with a list of tests to run, in this case, the `DataDriftTestPreset`. The test suite is then run on the reference data and the problematic data, and the results are displayed inline in the notebook.
 
+![test_suite](https://github.com/dimzachar/capstone_mlzoomcamp/blob/master/Extra/kaggle.png)
+
 We also generate a report using Evidently to support our analysis and debug the data. This involves creating a report object, running the report, and visualizing the report.
 
 The `Report` object is created with a list of metrics to calculate, in this case, the `DataDriftPreset`. The report is then run on the reference data and the problematic data, and the results are displayed inline in the notebook.
+
+![report1](https://github.com/dimzachar/capstone_mlzoomcamp/blob/master/Extra/kaggle.png)
 
 ```python
 column_mapping = ColumnMapping(
