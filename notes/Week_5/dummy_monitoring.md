@@ -30,7 +30,7 @@ import psycopg
 
 Next, we define a constant for the send timeout and an SQL statement to create the `dummy_metrics` table.
 
-```python
+```
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s]: %(message)s")
 
 SEND_TIMEOUT = 10
@@ -53,7 +53,7 @@ Next, we define two main functions:
 
 - `prep_db()` : This function prepares the database by checking if the test database exists. If it doesn't, it creates the database and then creates a table for dummy metrics.
 
-```python
+```
 def prep_db():
     with psycopg.connect("host=localhost port=5432 user=postgres password=example", autocommit=True) as conn:
         res = conn.execute("SELECT 1 FROM pg_database WHERE datname='test'")
@@ -65,7 +65,7 @@ def prep_db():
 
 - `calculate_dummy_metrics_postgresql()` : This function calculates dummy metrics and loads them into the table. It generates random values for three variables and inserts them into the table along with the current timestamp.
 
-```python
+```
 def calculate_dummy_metrics_postgresql(curr):
     value1 = rand.randint(0, 1000)
     value2 = str(uuid.uuid4())
@@ -81,7 +81,7 @@ def calculate_dummy_metrics_postgresql(curr):
 
 In the main function, we prepare the database and then run a loop to calculate and insert dummy metrics into the table. We also calculate the time delay to simulate real production usage.
 
-```python
+```
 def main():
 	prep_db()
 	last_send = datetime.datetime.now() - datetime.timedelta(seconds=10)
@@ -114,7 +114,7 @@ python dummy_metrics_calculation.py
 
 Go to the browser and take a look at our database. We have a table `dummy_metrics` which is good. This is the schema of the table and we can select some data. We see that we have quite a lot already here is a timestamp, value 1, value 2, and value 3.
 
-![dummy_metrics](https://github.com/dimzachar/capstone_mlzoomcamp/blob/master/Extra/kaggle.png)
+![dummy_metrics](https://github.com/dimzachar/mlops-zoomcamp/blob/master/notes/Week_5/Images/dummy_metrics.png)
 
 ## Step 7: Access Data from Grafana
 
@@ -122,6 +122,6 @@ Now, let's go to Grafana and see whether we are able to access those data from G
 
 So basically now we are sure that we correctly created all the configuration files so we can actually access our database, load data here, and build some dashboard from Grafana.
 
-![dummy_dashboard](https://github.com/dimzachar/capstone_mlzoomcamp/blob/master/Extra/kaggle.png)
+![dummy_dashboard](https://github.com/dimzachar/mlops-zoomcamp/blob/master/notes/Week_5/Images/dummy_dashboard.png)
 
 [Previous](baseline.md) | [Next](data_quality.md)

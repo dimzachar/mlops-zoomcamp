@@ -172,16 +172,16 @@ python evidently_metrics_calculation.py
 
 We can access the Prefect UI through `http://127.0.0.1:4200` and navigate `localhost:8080` to observe that the metrics table was created.
 
-![prefect](https://github.com/dimzachar/capstone_mlzoomcamp/blob/master/Extra/kaggle.png)
+![prefect](https://github.com/dimzachar/mlops-zoomcamp/blob/master/notes/Week_5/Images/prefect.png)
 
-![table_metrics](https://github.com/dimzachar/capstone_mlzoomcamp/blob/master/Extra/kaggle.png)
+![table_metrics](https://github.com/dimzachar/mlops-zoomcamp/blob/master/notes/Week_5/Images/table_metrics.png)
 
 ## Step 6: Grafana dashboard
 
 Finally, we build a dashboard with panels and metrics in Grafana. 
 
-![data_dashboard](https://github.com/dimzachar/capstone_mlzoomcamp/blob/master/Extra/kaggle.png)
-![data_dashboard1](https://github.com/dimzachar/capstone_mlzoomcamp/blob/master/Extra/kaggle.png)
+![data_dashboard](https://github.com/dimzachar/mlops-zoomcamp/blob/master/notes/Week_5/Images/data_dashboard.png)
+![data_dashboard1](https://github.com/dimzachar/mlops-zoomcamp/blob/master/notes/Week_5/Images/data_dashboard1.png)
 
 
 Next, we will discuss how to save the dashboard and ensure it can be loaded every time the Docker container is rerun.

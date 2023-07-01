@@ -10,7 +10,7 @@ Now, let's build a monitoring scheme! This scheme can be applied to both batch a
 
 ## Implementing the Monitoring Scheme
 
-![scheme](https://github.com/dimzachar/capstone_mlzoomcamp/blob/master/Extra/kaggle.png)
+![scheme](https://github.com/dimzachar/mlops-zoomcamp/blob/master/notes/Week_5/Images/scheme.svg)
 
 Let's put our scheme into action! Here's a step-by-step guide:
 

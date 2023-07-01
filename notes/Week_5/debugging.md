@@ -33,7 +33,7 @@ from sklearn.metrics import mean_absolute_error, mean_absolute_percentage_error
 
 Next, we load the data that we want to analyze and the model we want to monitor. In this case, we are interested in the data from February 2nd, which showed a high data drift value for our prediction function. We also define the target variable and the features that our model uses.
 
-![debugging](https://github.com/dimzachar/capstone_mlzoomcamp/blob/master/Extra/kaggle.png)
+![debugging](https://github.com/dimzachar/mlops-zoomcamp/blob/master/notes/Week_5/Images/debugging.png)
 
 The `ref_data` is the reference data that the model was trained on, and `current_data` is the new data that we want to analyze for drift. The `problematic_data` is a subset of the `current_data` that corresponds to the time when the drift occurred. This subset is what we will use for our analysis.
 
@@ -62,13 +62,13 @@ We then add the model's predictions to the `problematic_data` DataFrame. This is
 
 The `TestSuite` object is created with a list of tests to run, in this case, the `DataDriftTestPreset`. The test suite is then run on the reference data and the problematic data, and the results are displayed inline in the notebook.
 
-![test_suite](https://github.com/dimzachar/capstone_mlzoomcamp/blob/master/Extra/kaggle.png)
+![test_suite](https://github.com/dimzachar/mlops-zoomcamp/blob/master/notes/Week_5/Images/test_suite.png)
 
 We also generate a report using Evidently to support our analysis and debug the data. This involves creating a report object, running the report, and visualizing the report.
 
 The `Report` object is created with a list of metrics to calculate, in this case, the `DataDriftPreset`. The report is then run on the reference data and the problematic data, and the results are displayed inline in the notebook.
 
-![report1](https://github.com/dimzachar/capstone_mlzoomcamp/blob/master/Extra/kaggle.png)
+![report1](https://github.com/dimzachar/mlops-zoomcamp/blob/master/notes/Week_5/Images/report1.png)
 
 ```python
 column_mapping = ColumnMapping(

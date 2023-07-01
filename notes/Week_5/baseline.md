@@ -197,7 +197,7 @@ We'll generate an Evidently report to monitor the performance of our model using
 report = generate_report(train_data, val_data, num_features, cat_features)
 ```
 
-![report](https://github.com/dimzachar/capstone_mlzoomcamp/blob/master/Extra/kaggle.png)
+![report](https://github.com/dimzachar/mlops-zoomcamp/blob/master/notes/Week_5/Images/report.png)
 
 
 ## Step 9: Extract Key Metrics and Display Report
