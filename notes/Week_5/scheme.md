@@ -10,6 +10,8 @@ Now, let's build a monitoring scheme! This scheme can be applied to both batch a
 
 ## Implementing the Monitoring Scheme
 
+![scheme](https://github.com/dimzachar/capstone_mlzoomcamp/blob/master/Extra/kaggle.png)
+
 Let's put our scheme into action! Here's a step-by-step guide:
 
 - **Use a Prediction Service:** For this tutorial, we'll use a service that predicts the duration of taxi trips. This service could be implemented as a REST API service or a batch prediction pipeline.
