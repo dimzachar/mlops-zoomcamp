@@ -32,10 +32,13 @@ class TestPrepareData(unittest.TestCase):
             ('1', '-1', 8.0),
             ('1', '2', 1.0),
         ]
-
+        
         columns_test = ['PUlocationID', 'DOlocationID', 'duration']
         df_expected = pd.DataFrame(data_expected, columns=columns_test)
         
+        print("Number of rows in the expected dataframe:", df_expected.shape[0])
+
+
         self.assertTrue(df_actual['PUlocationID'].equals(df_expected['PUlocationID']))
         self.assertTrue(df_actual['DOlocationID'].equals(df_expected['DOlocationID']))
         self.assertAlmostEqual((df_actual['duration'] - df_expected['duration']).abs().sum(), 0, places=6)

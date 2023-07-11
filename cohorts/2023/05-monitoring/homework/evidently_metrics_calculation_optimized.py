@@ -39,7 +39,7 @@ with open('models/lin_reg.bin', 'rb') as f_in:
 
 # Set the year and month
 year = 2023
-month = 3
+month = 4
 
 # Generate the file name based on the year and month
 filename = f'data/green_tripdata_{year}-{month:02d}.parquet'

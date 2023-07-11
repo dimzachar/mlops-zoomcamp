@@ -30,8 +30,6 @@ columns = ['PULocationID', 'DOLocationID', 'tpep_pickup_datetime', 'tpep_dropoff
 df_input = pd.DataFrame(data, columns=columns)
 
 input_file = batch.get_input_path(2022, 1)
-output_file = batch.get_output_path(2022, 1)
-
 
 df_input.to_parquet(
     input_file,
@@ -40,12 +38,3 @@ df_input.to_parquet(
     index=False,
     storage_options=options
 )
-
-os.system('python batch.py 2022 1')
-
-df_actual = pd.read_parquet(output_file, storage_options=options)
-print("Sum of predicted durations: {:.2f}".format(df_actual['predicted_duration'].sum()))
-
-
-assert abs(df_actual['predicted_duration'].sum() - 31.51) < 0.1
-

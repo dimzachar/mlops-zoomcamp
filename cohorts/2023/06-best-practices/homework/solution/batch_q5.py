@@ -1,6 +1,8 @@
 import pickle
 import pandas as pd
+import os
 import sys
+
 
 def prepare_data(df, categorical):  
     df['duration'] = df.tpep_dropoff_datetime - df.tpep_pickup_datetime
@@ -12,17 +14,37 @@ def prepare_data(df, categorical):
     
     return df
 
-
 def read_data(filename, categorical):
-    df = pd.read_parquet(filename)
+    S3_ENDPOINT_URL = os.getenv('S3_ENDPOINT_URL')
+    
+    if S3_ENDPOINT_URL is not None:
+        options = {
+            'client_kwargs': {
+                'endpoint_url': S3_ENDPOINT_URL
+            }
+        }
+        df = pd.read_parquet(filename, storage_options=options)
+    else:
+        df = pd.read_parquet(filename)
     
     return prepare_data(df, categorical)
+    
+
+def get_input_path(year, month):
+    default_input_pattern = 'https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_{year:04d}-{month:02d}.parquet'
+    input_pattern = os.getenv('INPUT_FILE_PATTERN', default_input_pattern)
+    return input_pattern.format(year=year, month=month)
+
+
+def get_output_path(year, month):
+    default_output_pattern = 's3://nyc-duration-prediction-alexey/taxi_type=fhv/year={year:04d}/month={month:02d}/predictions.parquet'
+    output_pattern = os.getenv('OUTPUT_FILE_PATTERN', default_output_pattern)
+    return output_pattern.format(year=year, month=month)
+
 
 def main(year, month):
-    # Define the input file URL and output file path
-    input_file = f'https://d37ci6vzurychx.cloudfront.net/trip-data/{taxi_type}_tripdata_{year:04d}-{month:02d}.parquet'
-    output_file = f'taxi_type=yellow_year={year:04d}_month={month:02d}.parquet'
-
+    input_file = get_input_path(year, month)
+    output_file = get_output_path(year, month)
 
     # Load the model and vectorizer
     try:
@@ -49,16 +71,11 @@ def main(year, month):
 
     # Prepare a DataFrame with the ride_id and predicted_duration
     df_result = pd.DataFrame()
-    df_result['ride_id'] = f'{year:04d}/{month:02d}_' + df.index.astype('str')
+    df_result['ride_id'] = df['ride_id']
     df_result['predicted_duration'] = y_pred
 
     print("Saving results...")
-    df_result.to_parquet(
-        output_file,
-        engine='pyarrow',
-        compression=None,
-        index=False
-    )
+    df_result.to_parquet(output_file, engine='pyarrow', index=False)
 
     print("Process completed successfully.")
 
