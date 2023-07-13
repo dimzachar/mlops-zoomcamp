@@ -21,6 +21,5 @@ if [ ${ERROR_CODE} != 0 ]; then
     exit ${ERROR_CODE}
 fi
 
-echo "yay tests work!"
 
 docker-compose down
