@@ -344,7 +344,7 @@ So, in summary, this script is a testing pipeline that builds an image, sets up 
 
 # Next
 
-In the next video, we will cover code quality checks, automatic code formatting, and the use of make files for running tests.
+Next, we will cover code quality checks, automatic code formatting, and the use of make files for running tests.
 By following these steps, we can ensure that our Python code is thoroughly tested and works as expected. Remember to commit your code and your tests to GitHub regularly. This way, others can see your tests and how your code is supposed to work. Plus, if your project is open source, other contributors can run your tests to make sure their changes don't break anything.
 
 [Next](code_quality.md)
