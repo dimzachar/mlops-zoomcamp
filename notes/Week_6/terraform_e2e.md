@@ -140,7 +140,6 @@ output "image_uri" {
 
 The `output` block exports the URI of the Docker image that's been pushed to the ECR repository. This URI can be used in other parts of the Terraform configuration.
 
-#### `modules/ecr/variables.tf`
 
 The `variables.tf` file within the ECR module declares several variables that are used in the module's configuration:
 
