@@ -274,26 +274,26 @@ After your Terraform working directory has been successfully initialized, you ca
 terraform apply
 ```
 
-    By default, apply scans the current directory for the configuration and applies the changes appropriately. It will prompt you for confirmation before making any changes to your infrastructure.
+By default, apply scans the current directory for the configuration and applies the changes appropriately. It will prompt you for confirmation before making any changes to your infrastructure.
 You'll need to provide the required arguments that haven't been assigned any values yet. In this case, it's the source stream name. Let's call it `ride_events_sdg`.
 
 ```bash
 terraform apply -var="source_stream_name=ride_events_sdg"
 ```
 
-    Once confirmed, it will proceed to create the resources. The `terraform apply` command first displays a "plan" showing what will happen when you apply your configuration. This plan includes any resources that will be created, modified, or destroyed. In this case, it shows that a new Kinesis stream will be created. After verifying the plan, confirm the apply operation. Terraform will then create the infrastructure on your AWS cloud. This includes creating the Kinesis data streams as defined in your configuration.
+Once confirmed, it will proceed to create the resources. The `terraform apply` command first displays a "plan" showing what will happen when you apply your configuration. This plan includes any resources that will be created, modified, or destroyed. In this case, it shows that a new Kinesis stream will be created. After verifying the plan, confirm the apply operation. Terraform will then create the infrastructure on your AWS cloud. This includes creating the Kinesis data streams as defined in your configuration.
 
 **Check Created Resources**
 
-    After the `terraform apply` command completes, you can check the created resources in your AWS console. Navigate to the Kinesis section and you should see the data streams that were created.
+After the `terraform apply` command completes, you can check the created resources in your AWS console. Navigate to the Kinesis section and you should see the data streams that were created.
 
-    You can also use the AWS CLI or SDKs to interact with the Kinesis data streams and verify their creation. For example, you can use the `describe-stream` command to get information about a stream.
+You can also use the AWS CLI or SDKs to interact with the Kinesis data streams and verify their creation. For example, you can use the `describe-stream` command to get information about a stream.
 
 ```bash
 aws kinesis describe-stream --stream-name your-stream-name
 ```
 
-    Replace `your-stream-name` with the name of your Kinesis data stream. This command will return a JSON object with information about the stream.
+Replace `your-stream-name` with the name of your Kinesis data stream. This command will return a JSON object with information about the stream.
 
 ## Conclusion
 
