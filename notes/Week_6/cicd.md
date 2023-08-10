@@ -1,4 +1,6 @@
-# CI/CD Introduction
+[Previous](terraform_e2e.md)
+
+# CI/CD: Introduction
 
 In the world of DevOps, Continuous Integration (CI) and Continuous Delivery (CD) play a pivotal role in ensuring that software applications are developed, tested, packaged, and delivered in a structured and efficient manner.
 
@@ -29,7 +31,7 @@ This workflow will have two jobs and will be triggered when a pull request is cr
 
 This workflow will have one job with a series of steps and will be triggered only when a pull request is approved and merged to the main or a developed branch. It consists of:
 
-- **Defining the Infrastructure using Terraform**: This will repeat the steps from our previous section and automate the tf apply step to auto-generate the infrastructure if the tf plan detects any changes.
+- **Defining the Infrastructure using Terraform**: This will repeat the steps from our previous section and automate the `tf apply` step to auto-generate the infrastructure if the `tf plan` detects any changes.
 - **Build and Push**: This will build the Docker image for our Lambda service and then push it to our ECR repository.
 - **Deploy**: Once a new version of our Lambda function is published, the deploy step will update the Lambda config to run across multiple environments such as dev, stage, and prod with the environment variables we currently provide.
 
@@ -39,7 +41,7 @@ GitHub Actions is our chosen tool for setting up our CI/CD pipeline, offering st
 
 📁 GitHub Folder Structure
 
-- **.github**: Essential folder for GitHub's CI/CD configurations.
+- **.github/workflows/**: Essential folder for GitHub's CI/CD configurations.
 
 ## 🔁 CI Workflow (`workflows/ci-tests.yml`)
 
@@ -49,7 +51,7 @@ This workflow is primarily concerned with testing new code integrations.
 
 The workflow is initiated when a pull request is created from any feature branch, targeting the 'develop' branch.
 
-- **Environment**: Configure AWS variables using GitHub Secrets.
+**Environment**: Configure AWS variables using GitHub Secrets.
 
 ```yaml
 env:
@@ -58,13 +60,13 @@ env:
   AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 ```
 
-- **Jobs Within CI**:
+**Jobs Within CI**:
 
 Define the jobs for the workflow. This will include auto-testing our inference service both locally and on the cloud and running Terraform plan on our specified Terraform state file. These jobs can run sequentially or in parallel, based on the needs.
 
-**Job: Test** 
+- **Job: Test** 
 
-  - Sets up the required environment, checks out the code, run unit tests, and linting to ensure code quality.
+Sets up the required environment, checks out the code, run unit tests, and linting to ensure code quality.
 
 ```yaml
 
@@ -104,9 +106,9 @@ jobs:
 ```
 
 
-**Job: Terraform Plan** 
+- **Job: Terraform Plan** 
 
-  - Initialize Terraform state and track infrastructure changes.
+Initialize Terraform state and track infrastructure changes.
 
 ```yaml
 
@@ -130,9 +132,9 @@ tf-plan:
           terraform init -backend-config="key=mlops-zoomcamp-prod.tfstate" --reconfigure && terraform plan --var-file vars/prod.tfvars
 ```
 
-⚙️ Two jobs are defined in the CI pipeline: 'test' and 'TF plan'.
-🖥️ The 'runs on' tag specifies the type of machine on which the job will run. 
-⏭️ In GitHub Actions, by default, all jobs in a workflow run in parallel. This means that unless specified otherwise, jobs will start executing simultaneously, independent of each other. This is why `- uses: actions/checkout@v2` is required for each job, as each job runs in a new VM and needs its own copy of the code to work with.
+- ⚙️ Two jobs are defined in the CI pipeline: 'test' and 'TF plan'.
+- 🖥️ The 'runs on' tag specifies the type of machine on which the job will run. 
+- ⏭️ In GitHub Actions, by default, all jobs in a workflow run in parallel. This means that unless specified otherwise, jobs will start executing simultaneously, independent of each other. This is why `- uses: actions/checkout@v2` is required for each job, as each job runs in a new VM and needs its own copy of the code to work with.
 
 
 ## 🚀 CD Workflow (`workflows/cd-deploy.yml`)

@@ -1,3 +1,5 @@
+[Previous](code_quality.md) | [Next](terraform_intro.md)
+
 # Using Pre-Commit Hooks for Code Quality Checks
 
 We will be using pre-commit hooks to automate the execution of code quality checks such as formatting, linting, and testing. This will help us ensure that our code adheres to the set standards before it is committed to the repository.
@@ -118,4 +120,4 @@ make test
 Next, we will talk about concepts of Infrastructure-as-Code and Terraform. Stay tuned!
 
 
-[Previous](code_quality.md) | [Next](terraform.md)
+[Previous](code_quality.md) | [Next](terraform_intro.md)

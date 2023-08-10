@@ -1,3 +1,5 @@
+[Previous](tests.md) | [Next](makefiles_and_hooks.md)
+
 # Code Quality: Using Pylint, Black, and isort
 
 In this tutorial, we will learn how to improve the quality of our Python code using three tools: Pylint, Black, and isort. These tools help us to maintain a consistent code style, catch potential errors and bugs, and automatically format our code.

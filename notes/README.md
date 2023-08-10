@@ -34,5 +34,5 @@
 | Week 6 | Terraform Intro | [Terraform Intro](https://github.com/dimzachar/mlops-zoomcamp/blob/master/notes/Week_6/terraform_intro.md) |
 | Week 6 | Terraform Modules | [Terraform Modules](https://github.com/dimzachar/mlops-zoomcamp/blob/master/notes/Week_6/terraform_modules.md) |
 | Week 6 | Terraform E2E | [Terraform E2E](https://github.com/dimzachar/mlops-zoomcamp/blob/master/notes/Week_6/terraform_e2e.md) |
-| Week 6 | Cicd | [Cicd](https://github.com/dimzachar/mlops-zoomcamp/blob/master/notes/Week_6/cicd.md) |
+| Week 6 | CI/CD | [CI/CD](https://github.com/dimzachar/mlops-zoomcamp/blob/master/notes/Week_6/cicd.md) |
 

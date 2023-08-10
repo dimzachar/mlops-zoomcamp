@@ -1,3 +1,5 @@
+[Previous](terraform_modules.md) | [Next](cicd.md)
+
 # Terraform: Build an e2e workflow for ride predictions
 
 We continue the process of setting up a pipeline for AWS using Terraform. Previously, we created two Kinesis streams. 
@@ -24,9 +26,9 @@ terraform apply -var-file="vars/prod.tfvars"
 
 Similarly, replace with "vars/stg.tfvars" to set up the infrastructure for the staging environment.
 
-### S3 module
+### S3 module (`modules/s3/main.tf` and `modules/s3/variables.tf`)
 
-The S3 module (`modules/s3`) is a reusable Terraform module responsible for creating an Amazon S3 bucket. The `main.tf` file within this module is responsible for creating the S3 bucket:
+The S3 module is a reusable Terraform module responsible for creating an Amazon S3 bucket. The `main.tf` file within this module is responsible for creating the S3 bucket:
 
 
 ```hcl
@@ -83,8 +85,6 @@ This variable is used to provide a part of the custom name for the S3 bucket whe
 ### ECR Module (`modules/ecr/main.tf` and `modules/ecr/variables.tf`)
 
 The ECR (Elastic Container Registry) module is used to create an Amazon ECR repository and build and push a Docker image to it.
-
-#### `modules/ecr/main.tf`
 
 The `main.tf` file within this module contains the main configuration:
 
@@ -224,17 +224,16 @@ variable "ecr_repo_name" {
 This variable is used to provide a custom name for the ECR repository that is created in the ECR module. 
 
 
-### Lambda Module (`modules/lambda`)
+### Lambda Module (`modules/lambda/main.tf` and `modules/lambda/variables.tf`)
 
 The Lambda module defines an AWS Lambda function and an IAM role with the necessary permissions for the function. The `main.tf` file creates the Lambda function, the `variables.tf` file declares any necessary variables and `iam.tf` the IAM role resources.
 
-### `main.tf`
+- `main.tf`
 
 In your main.tf file, define the AWS Lambda function. The function requires a name and a package type, which could be either a zip file or a Docker image. If you're using a Docker image, you'll need to provide the image URI, which is the location of the Docker image on the cloud. The function also has a role that allows it to execute and interact with Kinesis, sets up its event invoke configuration, and maps the Lambda function to the source Kinesis data stream.
 
-#### `aws_lambda_function` block
 
-This block creates the AWS Lambda function:
+The `aws_lambda_function` block creates the AWS Lambda function:
 
 ```hcl
 resource "aws_lambda_function" "kinesis_lambda" {
@@ -255,9 +254,7 @@ resource "aws_lambda_function" "kinesis_lambda" {
 }
 ```
 
-#### `aws_lambda_function_event_invoke_config` block
-
-This block configures the event invoke configuration for the Lambda function:
+The `aws_lambda_function_event_invoke_config` block configures the event invoke configuration for the Lambda function:
 
 ```hcl
 resource "aws_lambda_function_event_invoke_config" "kinesis_lambda_event" {
@@ -269,9 +266,7 @@ resource "aws_lambda_function_event_invoke_config" "kinesis_lambda_event" {
 
 The `maximum_event_age_in_seconds` attribute sets the maximum age of a request that Lambda sends to a function for processing. The `maximum_retry_attempts` attribute sets the maximum number of times to retry when the function returns an error.
 
-#### `aws_lambda_event_source_mapping` block
-
-This block maps the Lambda function to the source Kinesis data stream:
+The `aws_lambda_event_source_mapping` block maps the Lambda function to the source Kinesis data stream:
 
 ```hcl
 resource "aws_lambda_event_source_mapping" "kinesis_mapping" {
@@ -286,14 +281,13 @@ resource "aws_lambda_event_source_mapping" "kinesis_mapping" {
 
 The `depends_on` attribute ensures that this block is only executed after the `aws_iam_role_policy_attachment.kinesis_processing` block has been executed.
 
-### `variables.tf`
+- `variables.tf`
 
 This file declares the variables used in `main.tf`. The variables include the names and ARNs of the source and output Kinesis data streams, the name of the model bucket, the name of the Lambda function, and the URI of the Docker image in the ECR repository.
 
-### `iam.tf`
+- `iam.tf`
 
 This file sets up the IAM roles and policies that the Lambda function needs to access the Kinesis data streams, write logs to CloudWatch, and access the model bucket in S3.
-
 
 **Main Configuration (`main.tf` and `variables.tf`)**
 
@@ -397,7 +391,7 @@ After triggering the Lambda, it's crucial to dive into AWS CloudWatch logs to en
 
 **What's Next**:
 
-- Future tutorials will focus on automating the deployment process using CI/CD with GitHub Actions. This will further streamline deployments, making them faster and more reliable.
+We will focus on automating the deployment process using CI/CD with GitHub Actions. This will further streamline deployments, making them faster and more reliable.
 
 **Stay tuned as we delve deeper into the world of cloud infrastructure automation!**
 
