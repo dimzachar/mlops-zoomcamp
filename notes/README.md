@@ -28,4 +28,11 @@
 | Week 5 | Data Quality | [Data Quality](https://github.com/dimzachar/mlops-zoomcamp/blob/master/notes/Week_5/data_quality.md) |
 | Week 5 | Save Dashboard | [Save Dashboard](https://github.com/dimzachar/mlops-zoomcamp/blob/master/notes/Week_5/save_dashboard.md) |
 | Week 5 | Debugging with test suites and reports | [Debugging](https://github.com/dimzachar/mlops-zoomcamp/blob/master/notes/Week_5/debugging.md) |
+| Week 6 | Tests | [Tests](https://github.com/dimzachar/mlops-zoomcamp/blob/master/notes/Week_6/tests.md) |
+| Week 6 | Code Quality | [Code Quality](https://github.com/dimzachar/mlops-zoomcamp/blob/master/notes/Week_6/code_quality.md) |
+| Week 6 | Makefiles And Hooks | [Makefiles And Hooks](https://github.com/dimzachar/mlops-zoomcamp/blob/master/notes/Week_6/makefiles_and_hooks.md) |
+| Week 6 | Terraform Intro | [Terraform Intro](https://github.com/dimzachar/mlops-zoomcamp/blob/master/notes/Week_6/terraform_intro.md) |
+| Week 6 | Terraform Modules | [Terraform Modules](https://github.com/dimzachar/mlops-zoomcamp/blob/master/notes/Week_6/terraform_modules.md) |
+| Week 6 | Terraform E2E | [Terraform E2E](https://github.com/dimzachar/mlops-zoomcamp/blob/master/notes/Week_6/terraform_e2e.md) |
+| Week 6 | Cicd | [Cicd](https://github.com/dimzachar/mlops-zoomcamp/blob/master/notes/Week_6/cicd.md) |
 

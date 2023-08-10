@@ -12,4 +12,4 @@
 8. [Data Quality](data_quality.md)
 9. [Save Dashboard](save_dashboard.md)
 10. [Debugging with test suites and reports](debugging.md)
-7. [Videos for Week 5](videos/)
+11. [Videos for Week 5](videos/)
